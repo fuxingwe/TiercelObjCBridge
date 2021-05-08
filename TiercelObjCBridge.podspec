@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/**/*.swift'
   s.requires_arc = true
   s.frameworks = 'CFNetwork'
-  s.dependency 'Tiercel', '2.4.1'
+  s.dependency 'Tiercel', '3.2.1'
 end
