@@ -1,0 +1,16 @@
+PODS:
+  - Tiercel (3.2.1)
+
+DEPENDENCIES:
+  - Tiercel (= 3.2.1)
+
+SPEC REPOS:
+  trunk:
+    - Tiercel
+
+SPEC CHECKSUMS:
+  Tiercel: 94b817f76bcdb7c86290b3dbd945048e94c6c153
+
+PODFILE CHECKSUM: 6480c6609ab9e92b43634336a6a802ef95575477
+
+COCOAPODS: 1.9.1

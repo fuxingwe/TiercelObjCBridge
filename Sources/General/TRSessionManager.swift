@@ -31,24 +31,24 @@ import Tiercel
 
     private let sessionManager: SessionManager
     
-    public static var logLevel: TRLogLevel = .detailed {
-        didSet {
-            switch logLevel {
-            case .detailed:
-                SessionManager.logLevel = .detailed
-            case .simple:
-                SessionManager.logLevel = .simple
-            case .none:
-                SessionManager.logLevel = .none
-            }
-        }
-    }
+//    public static var logLevel: TRLogLevel = .detailed {
+//        didSet {
+//            switch logLevel {
+//            case .detailed:
+//                SessionManager.logLevel = .detailed
+//            case .simple:
+//                SessionManager.logLevel = .simple
+//            case .none:
+//                SessionManager.logLevel = .none
+//            }
+//        }
+//    }
 
-    public static var isControlNetworkActivityIndicator = true {
-        didSet {
-            SessionManager.isControlNetworkActivityIndicator = isControlNetworkActivityIndicator
-        }
-    }
+//    public static var isControlNetworkActivityIndicator = true {
+//        didSet {
+//            SessionManager.isControlNetworkActivityIndicator = isControlNetworkActivityIndicator
+//        }
+//    }
 
     public let operationQueue: DispatchQueue
     
@@ -126,7 +126,21 @@ import Tiercel
     public func invalidate() {
         sessionManager.invalidate()
     }
-
+    
+    public func moveTask(at sourceIndex: Int, to destinationIndex: Int) {
+        let range = (0..<tasks.count)
+        guard range.contains(sourceIndex) && range.contains(destinationIndex) else {
+            return
+        }
+        if sourceIndex == destinationIndex {
+            return
+        }
+        sessionManager.moveTask(at: sourceIndex, to: destinationIndex)
+        let task = tasks[sourceIndex]
+        tasks.remove(at: sourceIndex)
+        tasks.insert(task, at: destinationIndex)
+    }
+    
     @discardableResult
     public func download(url: TRURLConvertible,
                          headers: [String: String]?,
@@ -153,7 +167,7 @@ import Tiercel
                               headers: [[String: String]]?,
                               fileNames: [String]?) -> [TRDownloadTask] {
         let convertURLs = urls.map { asURLConvertible($0) }
-        let downloadTasks = sessionManager.multiDownload(convertURLs, headers: headers, fileNames: fileNames)
+        let downloadTasks = sessionManager.multiDownload(convertURLs, headersArray: headers, fileNames: fileNames)
         let convertDownloadTasks = downloadTasks.map { TRDownloadTask($0) }
         tasks.append(contentsOf: convertDownloadTasks)
         return convertDownloadTasks

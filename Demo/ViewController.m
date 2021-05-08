@@ -44,7 +44,7 @@
     int64_t free = [UIDevice currentDevice].tr_freeDiskSpaceInBytes / 1024 / 1024;
     NSLog(@"手机剩余储存空间为： %lld", free);
 
-    TRSessionManager.logLevel = TRLogLevelSimple;
+    //TRSessionManager.logLevel = TRLogLevelSimple;
 
     self.sessionManager = ((AppDelegate *)[UIApplication sharedApplication].delegate).sessionManager;
     
@@ -84,20 +84,20 @@
 
 - (IBAction)start:(id)sender {
     __weak typeof(self) weakSelf = self;
-    [[[[[self.sessionManager downloadWithUrl:self.URLString headers:nil fileName:nil] progressOnMainQueue:YES handler:^(TRDownloadTask * _Nonnull task) {
+    /*[*/[[[[self.sessionManager downloadWithUrl:self.URLString headers:nil fileName:nil] progressOnMainQueue:YES handler:^(TRDownloadTask * _Nonnull task) {
         [weakSelf updateUIWithTask:task];
     }] successOnMainQueue:YES handler:^(TRDownloadTask * _Nonnull task) {
         [weakSelf updateUIWithTask:task];
     }] failureOnMainQueue:YES handler:^(TRDownloadTask * _Nonnull task) {
         [weakSelf updateUIWithTask:task];
-    }] validateFileWithCode:@"9e2a3650530b563da297c9246acaad5c" type:TRFileVerificationTypeMd5 onMainQueue:YES handler:^(TRDownloadTask * _Nonnull task) {
+    }] /*validateFileWithCode:@"9e2a3650530b563da297c9246acaad5c" type:TRFileVerificationTypeMd5 onMainQueue:YES handler:^(TRDownloadTask * _Nonnull task) {
         [weakSelf updateUIWithTask:task];
         if (task.validation == TRValidationCorrect) {
             NSLog(@"文件正确");
         } else {
             NSLog(@"文件错误");
         }
-    }];
+    }]*/;
 }
 
 - (IBAction)suspend:(id)sender {

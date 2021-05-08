@@ -36,14 +36,14 @@ import Tiercel
     }
 
     internal let downloadTask: DownloadTask
-    
-    public var originalRequest: URLRequest? {
-        downloadTask.originalRequest
-    }
 
-    public var currentRequest: URLRequest? {
-        downloadTask.currentRequest
-    }
+//    public var originalRequest: URLRequest? {
+//        downloadTask..originalRequest
+//    }
+//
+//    public var currentRequest: URLRequest? {
+//        downloadTask.currentRequest
+//    }
 
     public var response: URLResponse? {
         downloadTask.response
@@ -120,28 +120,28 @@ import Tiercel
     }
     
     
-    @discardableResult
-    public func validateFile(code: String,
-                             type: TRFileVerificationType,
-                             onMainQueue: Bool = true,
-                             handler: @escaping Handler<TRDownloadTask>) -> Self {
-        let convertType: FileVerificationType
-        switch type {
-        case .md5:
-            convertType = .md5
-        case .sha1:
-            convertType = .sha1
-        case .sha256:
-            convertType = .sha256
-        case .sha512:
-            convertType = .sha512
-        }
-        downloadTask.validateFile(code: code, type: convertType, onMainQueue: onMainQueue) { [weak self] _ in
-            guard let self = self else { return }
-            handler(self)
-        }
-        return self
-    }
+//    @discardableResult
+//    public func validateFile(code: String,
+//                             type: TRFileVerificationType,
+//                             onMainQueue: Bool = true,
+//                             handler: @escaping Handler<TRDownloadTask>) -> Self {
+//        let convertType: FileVerificationType
+//        switch type {
+//        case .md5:
+//            convertType = .md5
+//        case .sha1:
+//            convertType = .sha1
+//        case .sha256:
+//            convertType = .sha256
+//        case .sha512:
+//            convertType = .sha512
+//        }
+//        downloadTask.validateFile(code: code, type: convertType, onMainQueue: onMainQueue) { [weak self] _ in
+//            guard let self = self else { return }
+//            handler(self)
+//        }
+//        return self
+//    }
     
     @discardableResult
     public func progress(onMainQueue: Bool = true, handler: @escaping Handler<TRDownloadTask>) -> Self {

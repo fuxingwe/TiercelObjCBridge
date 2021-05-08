@@ -5,6 +5,6 @@
       location = "group:TiercelObjCBridge.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../Tiercel/Tiercel.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
