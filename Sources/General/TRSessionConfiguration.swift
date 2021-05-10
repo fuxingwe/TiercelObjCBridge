@@ -65,7 +65,6 @@ import Tiercel
             sessionManager?.configuration.allowsCellularAccess = allowsCellularAccess
         }
     }
-
 }
 
 var MaxConcurrentTasksLimit: Int {
