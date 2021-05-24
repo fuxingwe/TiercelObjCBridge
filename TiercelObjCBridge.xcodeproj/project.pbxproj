@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D9264F0F933A43CE4971FEC /* Pods_TiercelObjCBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C4792ADB6C1EF00C370C1B /* Pods_TiercelObjCBridge.framework */; };
 		E101E40423838A8E0006C296 /* TRCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101E40323838A8E0006C296 /* TRCache.swift */; };
 		E101E4062383AB3F0006C296 /* TRCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101E4052383AB3F0006C296 /* TRCommon.swift */; };
 		E101E4092383D5E60006C296 /* TaskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101E4082383D5E60006C296 /* TaskInfo.swift */; };
@@ -18,6 +17,7 @@
 		E174DA07239FA5430085FD9E /* TiercelObjCBridge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1DA6447237FDD73005FD6A9 /* TiercelObjCBridge.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E1DA644C237FDD73005FD6A9 /* TiercelObjCBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = E1DA644A237FDD73005FD6A9 /* TiercelObjCBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1DA6454237FDDDA005FD6A9 /* TRSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DA6453237FDDDA005FD6A9 /* TRSessionManager.swift */; };
+		E1DA6460237FDFAC005FD6A9 /* Tiercel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DA645F237FDFAC005FD6A9 /* Tiercel.framework */; platformFilter = ios; };
 		E1DA646F237FE490005FD6A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DA646E237FE490005FD6A9 /* AppDelegate.m */; };
 		E1DA6475237FE490005FD6A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DA6474237FE490005FD6A9 /* ViewController.m */; };
 		E1DA6478237FE490005FD6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DA6476237FE490005FD6A9 /* Main.storyboard */; };
@@ -49,20 +49,9 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1DA6462237FDFAC005FD6A9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		079E317A08A683C0090A597C /* Pods-TiercelObjCBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiercelObjCBridge.release.xcconfig"; path = "Target Support Files/Pods-TiercelObjCBridge/Pods-TiercelObjCBridge.release.xcconfig"; sourceTree = "<group>"; };
 		E101E40323838A8E0006C296 /* TRCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRCache.swift; sourceTree = "<group>"; };
 		E101E4052383AB3F0006C296 /* TRCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRCommon.swift; sourceTree = "<group>"; };
 		E101E4082383D5E60006C296 /* TaskInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfo.swift; sourceTree = "<group>"; };
@@ -73,6 +62,10 @@
 		E1DA644A237FDD73005FD6A9 /* TiercelObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TiercelObjCBridge.h; sourceTree = "<group>"; };
 		E1DA644B237FDD73005FD6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1DA6453237FDDDA005FD6A9 /* TRSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRSessionManager.swift; sourceTree = "<group>"; };
+		E1DA6456237FDE04005FD6A9 /* Tiercel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tiercel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1DA645A237FDF9A005FD6A9 /* Tiercel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tiercel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1DA645E237FDFA6005FD6A9 /* Tiercel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tiercel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1DA645F237FDFAC005FD6A9 /* Tiercel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tiercel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DA646B237FE490005FD6A9 /* TiercelObjCBridge-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TiercelObjCBridge-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DA646D237FE490005FD6A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1DA646E237FE490005FD6A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,8 +77,6 @@
 		E1DA647E237FE492005FD6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1DA647F237FE492005FD6A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1DA6484237FEF22005FD6A9 /* TRSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRSessionConfiguration.swift; sourceTree = "<group>"; };
-		E1E77BCF0FFEA6418EBB4129 /* Pods-TiercelObjCBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiercelObjCBridge.debug.xcconfig"; path = "Target Support Files/Pods-TiercelObjCBridge/Pods-TiercelObjCBridge.debug.xcconfig"; sourceTree = "<group>"; };
-		E2C4792ADB6C1EF00C370C1B /* Pods_TiercelObjCBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiercelObjCBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D9264F0F933A43CE4971FEC /* Pods_TiercelObjCBridge.framework in Frameworks */,
+				E1DA6460237FDFAC005FD6A9 /* Tiercel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,15 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BAAC44294C4A7DFE66408254 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E1E77BCF0FFEA6418EBB4129 /* Pods-TiercelObjCBridge.debug.xcconfig */,
-				079E317A08A683C0090A597C /* Pods-TiercelObjCBridge.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		E101E4072383D5C30006C296 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,7 +115,6 @@
 				E1DA646C237FE490005FD6A9 /* Demo */,
 				E1DA6448237FDD73005FD6A9 /* Products */,
 				E1DA6455237FDE04005FD6A9 /* Frameworks */,
-				BAAC44294C4A7DFE66408254 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,7 +154,10 @@
 		E1DA6455237FDE04005FD6A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2C4792ADB6C1EF00C370C1B /* Pods_TiercelObjCBridge.framework */,
+				E1DA645F237FDFAC005FD6A9 /* Tiercel.framework */,
+				E1DA645A237FDF9A005FD6A9 /* Tiercel.framework */,
+				E1DA645E237FDFA6005FD6A9 /* Tiercel.framework */,
+				E1DA6456237FDE04005FD6A9 /* Tiercel.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,12 +196,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1DA644F237FDD73005FD6A9 /* Build configuration list for PBXNativeTarget "TiercelObjCBridge" */;
 			buildPhases = (
-				2382195AB4C4875454B11D5F /* [CP] Check Pods Manifest.lock */,
 				E1DA6442237FDD73005FD6A9 /* Headers */,
 				E1DA6443237FDD73005FD6A9 /* Sources */,
 				E1DA6444237FDD73005FD6A9 /* Frameworks */,
 				E1DA6445237FDD73005FD6A9 /* Resources */,
-				E1DA6462237FDFAC005FD6A9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,31 +286,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2382195AB4C4875454B11D5F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TiercelObjCBridge-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1DA6443237FDD73005FD6A9 /* Sources */ = {
@@ -508,12 +465,12 @@
 		};
 		E1DA6450237FDD73005FD6A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1E77BCF0FFEA6418EBB4129 /* Pods-TiercelObjCBridge.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Y3437T5EGX;
+				DEVELOPMENT_TEAM = K63JP56M74;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -525,10 +482,16 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Daniels.TiercelObjCBridge;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -537,12 +500,12 @@
 		};
 		E1DA6451237FDD73005FD6A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 079E317A08A683C0090A597C /* Pods-TiercelObjCBridge.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Y3437T5EGX;
+				DEVELOPMENT_TEAM = K63JP56M74;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -554,10 +517,16 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Daniels.TiercelObjCBridge;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -569,7 +538,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y3437T5EGX;
+				DEVELOPMENT_TEAM = K63JP56M74;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -591,7 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y3437T5EGX;
+				DEVELOPMENT_TEAM = K63JP56M74;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
