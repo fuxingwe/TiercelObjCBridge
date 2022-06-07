@@ -1,26 +1,21 @@
 导入静态库的方式：
-直接拖入到xcode工程/放到unity的Plugins目录下会自动在导出xcode工程时引入进去
-TiercelObjCBridge和Tiercel都改为静态库，设置Mach-O Type为Static Library（https://blog.csdn.net/sinat_16714231/article/details/52857222）
-TiercelObjCBridge的workspace工程中拖入最新Tiercel工程，并改为Do Not Embed（静态库引入方式），注释掉报错代码。添加moveTask方法。改成Release之后Build输出两个framework
-在工程中引入TiercelObjCBridge.framework和Tiercel.framework，引用头文件，即可使用
+1.直接拖入到xcode工程 or 放到unity的Plugins目录下会自动在导出xcode工程时引入进去
+2.TiercelObjCBridge和Tiercel打开workspace工程都改为静态库，设置Mach-O Type为Static Library（https://blog.csdn.net/sinat_16714231/article/details/52857222）
+TiercelObjCBridge的workspace工程中拖入最新Tiercel工程，并改为Do Not Embed（静态库引入方式），注释掉报错代码（比如statusCode变量缺失，logLevel相关）。添加moveTask方法
+把Run都改成Release之后分别Build两个workspace工程，到product输出中找到两个framework
+在工程中引入TiercelObjCBridge.framework和Tiercel.framework，引用头文件，即可使用。（Unity工程是放到Plugin目录里）
 
-xcoce工程配置解决混编报错问题：（https://shannonchenchn.github.io/2020/06/08/how-to-mix-objc-and-swift-in-a-modular-project/）
-在 Build Settings 下找到 Library Search Paths，添加两项
-$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)
-$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)。
-
-Build Settings 下的 Runpath Search Path 中最前面添加 /usr/lib/swift
-将 Build Settings 下的 Always Embed Swift Standard Libraries 设置为 YES
-
+xcoce工程配置解决混编报错问题：（https://shannonchenchn.github.io/2020/06/08/how-to-mix-objc-and-swift-in-a-modular-project/）  https://qastack.cn/programming/52536380/why-linker-link-static-libraries-with-errors-ios
 Unity自动化的话需要在后处理里执行：
-//支持swift库混编
-proj.AddBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)");
-proj.AddBuildProperty(target, "LIBRARY_SEARCH_PATHS", "$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)");
-proj.AddBuildProperty(target, "LD_RUNPATH_SEARCH_PATHS", "/usr/lib/swift @executable_path/Frameworks");
-proj.SetBuildProperty(target, "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES", "YES");
+//支持swift库混编，不良人3是添加到UnityFramework这个Target上
+pbxProject.AddBuildProperty(frameworkTarget, "LIBRARY_SEARCH_PATHS","$(SDKROOT)/usr/lib/swift");
+pbxProject.AddBuildProperty(frameworkTarget, "LIBRARY_SEARCH_PATHS","$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)");
+pbxProject.AddBuildProperty(frameworkTarget, "LIBRARY_SEARCH_PATHS","$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)");
+pbxProject.SetBuildProperty(frameworkTarget, "LD_RUNPATH_SEARCH_PATHS","/usr/lib/swift $(inherited) @executable_path/Frameworks @loader_path/Frameworks");
+//  pbxProject.SetBuildProperty(pbxProject.GetUnityFrameworkTargetGuid(), "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES", "YES");
+pbxProject.SetBuildProperty(frameworkTarget, "BUILD_LIBRARY_FOR_DISTRIBUTION", "YES");
 
-
-
+   
 Podfile的方式：
 1.引入swift的库使用use_frameworks!方式更好，没有报错
 2.不使用use_frameworks!方式，需要解决头文件找不到的问题

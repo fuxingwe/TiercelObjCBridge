@@ -49,9 +49,9 @@ import Tiercel
         downloadTask.response
     }
     
-    public var statusCode: Int {
-        downloadTask.statusCode ?? -1
-    }
+//    public var statusCode: Int {
+//        downloadTask.statusCode ?? -1
+//    }
 
     public var filePath: String {
         return downloadTask.filePath
