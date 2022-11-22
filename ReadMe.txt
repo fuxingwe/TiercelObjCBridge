@@ -1,3 +1,4 @@
+不同于Android上自己写的下载模块，Tiercel断网不会触发下载失败，WIFI和4G切换也不会触发断网
 导入静态库的方式：
 1.直接拖入到xcode工程 or 放到unity的Plugins目录下会自动在导出xcode工程时引入进去
 2.TiercelObjCBridge和Tiercel打开workspace工程都改为静态库，设置Mach-O Type为Static Library（https://blog.csdn.net/sinat_16714231/article/details/52857222）
